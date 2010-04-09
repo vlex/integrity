@@ -31,6 +31,11 @@ class BuildTest < IntegrityTest
       build.human_status
   end
 
+  it "has a human readable duration" do
+    assert_match '2m',
+    Build.gen(:successful).human_duration
+  end  
+
   test "being destroyed" do
     build = Build.gen
     assert_change(Commit, :count, -1) { build.destroy }

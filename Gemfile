@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem "chronic_duration", "0.8.0"
 gem "dm-sqlite-adapter", "1.0.0"
 gem "dm-core", "1.0.0"
 gem "dm-timestamps", "1.0.0"
