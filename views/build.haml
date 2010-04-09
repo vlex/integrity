@@ -5,3 +5,10 @@
   %p
     %button{ :title => "Delete this build" }
       Delete this build
+- unless @build.screenshots.empty?
+  %ul#screenshots
+    - @build.screenshots.each do |screenshot|
+      - screenshot_url = "#{build_path(@build)}/#{screenshot}"
+      %li
+        %a{:href => screenshot_url}
+          %img{:src => screenshot_url}

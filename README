@@ -1,6 +1,16 @@
 Integrity — Continuous Integration server
 
-Code  http://github.com/integrity/integrity
+Compared with http://github.com/integrity/integrity this fork has four major enhancements:
+
+- The output is wider, occupying 90% of the page rather than just 40em
+
+- The elapsed time for each build is shown in the list of builds
+
+- The output of the build process is shown in real time, rather than only at the end of each build
+
+- Optional screenshots taking during the test are shown within each build
+
+Code  http://github.com/claudiob/integrity
 Docs  http://integrityapp.com
 CI    http://builder.integrityapp.com/integrity
 Bugs  http://github.com/integrity/integrity/issues
