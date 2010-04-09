@@ -47,6 +47,15 @@ module Integrity
       end
     end
 
+    def current_output
+      return output if !completed_at.nil? || pending?
+      begin
+        File.open(File.join(Repository.new(id, project.uri, project.branch, commit.identifier).directory,'/build.txt'), "r") { |f| f.read }
+      rescue Errno::ENOENT
+        "Whoops: #{output}"
+      end
+    end
+
     def human_status
       case status
       when :success  then "Built #{commit.short_identifier} successfully"
