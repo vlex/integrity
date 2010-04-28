@@ -19,6 +19,8 @@
 !failed_color  = #f10
 !building_bg   = #ccc
 !building_color = #777
+!pending_bg    = #fe8
+!pending_color = #a90
 
 html
   :background-color = !page_bg
@@ -255,6 +257,8 @@ a
           :color = !failed_color
         &.building
           :color = !building_color
+        &.pending
+          :color = !pending_color
       .meta
         :position absolute
         :right .6em
@@ -262,6 +266,14 @@ a
         :font-size 0.8em
         :color = !light_color
         :text-align right
+      &.success .meta
+        :color = !success_color
+      &.failed .meta
+        :color = !failed_color
+      &.building .meta
+        :color = !building_color
+      &.pending .meta
+        :color = !pending_color
 
   #previous_builds
     li
@@ -303,6 +315,14 @@ a
           :color = !building_bg - #444
         &:hover
           :background-color = !building_bg + #222
+      &.pending a
+        :background-color = !pending_bg
+        :border-color = !pending_bg - #222
+        :color = !pending_color
+        .attribution
+          :color = !pending_bg - #444
+        &:hover
+          :background-color = !pending_bg + #222
 
 
   #build, #last_build
@@ -352,6 +372,16 @@ a
         a:hover
           :color = !building_bg
           :background-color = !building_color
+
+    &.pending
+      h1, blockquote
+        :background-color = !pending_bg
+        :border-color = (!pending_bg - #222) (!pending_bg + #111) (!pending_bg + #111) (!pending_bg - #222)
+      h1
+        :color = !pending_color
+      .meta
+        :color = !pending_color - #444
+
     h1
       :margin-top .5em
       :margin-bottom 0

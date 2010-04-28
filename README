@@ -10,6 +10,8 @@ Compared with http://github.com/integrity/integrity this fork has four major enh
 
 - Optional screenshots taking during the test are shown within each build
 
+- Pending builds are styled in yellow, not in red/grey
+
 Code  http://github.com/claudiob/integrity
 Docs  http://integrityapp.com
 CI    http://builder.integrityapp.com/integrity
