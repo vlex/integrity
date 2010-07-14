@@ -1,11 +1,13 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 
-require ".bundle/environment"
+# integrity.vlex.com uses bundler08, not bundler:
+require "vendor/gems/environment"
 require "integrity"
 
 # Uncomment as appropriate for the notifier you want to use
 # = Email
-# require "integrity/notifier/email"
+# integrity.vlex.com uses email notifications:
+require "integrity/notifier/email"
 # = IRC
 # require "integrity/notifier/irc"
 # = Campfire
@@ -20,9 +22,11 @@ require "integrity"
 Integrity.configure do |c|
   c.database     "sqlite3:integrity.db"
   c.directory    "builds"
-  c.base_url     "http://ci.example.org"
+  c.base_url     "http://integrity.vlex.com"
   c.log          "integrity.log"
   c.github       "SECRET"
   c.build_all!
-  c.builder      :threaded, 5
+  # integrity.vlex.com uses delayed_job:
+  # c.builder      :threaded, 5
+  c.builder :dj, :adapter => "sqlite3", :database => "dj.db"
 end

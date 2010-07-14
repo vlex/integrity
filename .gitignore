@@ -4,3 +4,7 @@ doc/integrity.html
 builds
 *.db
 *.log
+bin/
+vendor/
+.sass-cache/
+tmp/

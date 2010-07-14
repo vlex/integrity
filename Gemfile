@@ -33,9 +33,10 @@ gem "rack", "1.1.0"
 # gem "nap", :git => "git://github.com/qrush/nap.git"
 
 # = Dependencies for the :dj builder
-# gem "activerecord"
-# gem "sqlite3-ruby"
-# gem "delayed_job", :git => "git://github.com/tobi/delayed_job.git"
+# integrity.vlex.com uses delayed job:
+gem "activerecord"
+gem "sqlite3-ruby"
+gem "delayed_job", :git => "git://github.com/tobi/delayed_job.git"
 # = Dependency for the :resque builder
 # gem "resque"
 
@@ -44,7 +45,8 @@ gem "rack", "1.1.0"
 # gem "mysql"
 
 # = Development dependencies.
-group :test do
+# integrity.vlex.com uses bundler08:
+only :test do
   gem "ruby-debug" if RUBY_VERSION < '1.9'
   gem "sqlite3-ruby"
   gem "activerecord"
