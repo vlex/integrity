@@ -9,7 +9,7 @@
   %p&= build.commit.message
   %p.meta<
     %span.who<
-      &== by: #{build.commit.author.name}
+      &== by: #{build.commit.author}
     |
     %span.when{ :title => build.commit.committed_at }<
       &= pretty_date build.commit.committed_at
